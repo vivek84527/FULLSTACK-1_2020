@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-9</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        html {
+      scroll-padding-top: 70px;
+      scroll-behavior: smooth;
+    }
+
+        div {
+            margin: 3px 3px 8px 3px;
+        }
+
+        .header {
+            width: 100%;
+            height: 70px;
+            background-color: grey;
+            padding: 0 20px;
+            position: sticky;
+            top: 0px;
+        }
+
+        .header h2 {
+            line-height: 70px;
+            float: left;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .header .menu {
+            list-style: none;
+            float: right;
+        }
+
+        .menu li {
+            display: inline-block;
+            line-height: 70px;
+
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            text-transform: uppercase;
+            padding: 0px 20px;
+        }
+
+        .menu li a:hover,
+        .show-btn:hover,
+        .hide-btn:hover {
+            color: skyblue;
+            transition: .4s;
+
+        }
+
+        .show-btn,
+        .hide-btn {
+            font-size: 30px;
+            color: white;
+            line-height: 70px;
+            transition: .4s;
+            display: none;
+        }
+
+        .show-btn {
+            float: right;
+
+        }
+
+        #chk {
+
+            position: fixed;
+            visibility: hidden;
+            z-index: -10;
+        }
+
+        .banner {
+            width: 100%;
+            margin-top: 10px;
+            height: 680px;
+            margin-bottom: 15px;
+            display: flex;
+            font-size: 40px;
+            color: white;
+        }
+
+        .banner {
+            background-image: url(../Image/banner.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .banner h2 {
+            margin: 20px 20px;
+            color: #fff;
+        }
+
+
+
+        .team {
+            margin-top: 120px;
+            margin-left: 80px;
+        }
+
+        .team h1 {
+            text-align: center;
+            margin-bottom: 24px;
+
+        }
+
+        .team img {
+            float: left;
+            width: 17%;
+            border-radius: 50%;
+            margin-left: 80px;
+
+        }
+
+        .aboutus {
+            /* border: red 4px solid; */
+            margin-top: 30px;
+            display: inline-block;
+            width: 100%;
+
+        }
+
+        .aboutus h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .project-1 {
+            display: block;
+            border: rgb(107, 104, 104) 4px solid;
+            height: 590px;
+            margin-left: 8px;
+            width: 740px;
+            float: left;
+            background-color: rgb(107, 104, 104);
+
+        }
+
+        .project-1 h2 {
+            margin: 4px 4px 4px 2px;
+            color: white;
+
+        }
+
+        .project-1 p {
+            font-size: 20px;
+        }
+
+        .project-2 {
+            /* border: chartreuse 4px solid; */
+            width: 50%;
+            overflow: hidden;
+            margin-left: 770px;
+
+
+
+        }
+
+        .p1 img {
+            width: 720px;
+            height: 180px;
+
+        }
+
+        .p1 h3 {
+            position: absolute;
+            margin-top: 4px;
+            color: black;
+            margin-left: 230px;
+            font-size: 25px;
+        }
+
+        .div {
+            float: left;
+            margin: 20px 15px;
+
+        }
+
+        #div1 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            padding: 10px 10px;
+            border-radius: 9px;
+            background-color: rgb(216, 151, 151);
+
+
+        }
+
+        #div2 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            padding: 10px 10px;
+            border-radius: 9px;
+            background-color: rgb(216, 151, 151);
+
+
+
+        }
+
+        #div3 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            padding: 10px 10px;
+            border-radius: 9px;
+            background-color: rgb(216, 151, 151);
+
+
+        }
+
+        #div4 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            border-radius: 9px;
+            padding: 10px 10px;
+            background-color: rgb(216, 151, 151);
+
+        }
+
+        .tec p {
+
+            width: 240px;
+            padding-left: 15px;
+
+        }
+
+        .tec a {
+            display: block;
+            border: red solid 2px;
+            margin-left: 10px;
+            margin-left: 3px;
+            color: white;
+            margin-top: 8px;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: white;
+            font-size: 20px;
+            text-decoration: none;
+            background-color: red;
+            text-align: center;
+
+
+
+        }
+
+        .tec a:hover {
+            display: block;
+            border: blue solid 2px;
+            margin-left: 10px;
+            margin-left: 3px;
+            color: white;
+            margin-top: 8px;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: white;
+            font-size: 20px;
+            text-decoration: none;
+            background-color: blue;
+            text-align: center;
+
+
+
+        }
+
+        .tec img {
+            border-radius: 8px;
+
+        }
+
+        .contact {
+            border: chartreuse 2px solids;
+        }
+
+        .con1 {
+            border: chocolate 2px solid;
+            background-color: rgb(233, 86, 115);
+            height: 140px;
+        }
+
+        .con1 h3 {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .con1 a {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        @media (min-width: 801px) and (max-width: 1199px){
+
+            .show-btn,
+            .hide-btn {
+                display: block;
+            }
+
+            .menu {
+                position: fixed;
+                top: 0px;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: #333;
+                text-align: center;
+                padding: 80px 0;
+                transition: .7s;
+                line-height: normal;
+            }
+
+            #chk:checked~.menu {
+                right: 0;
+            }
+
+            .menu li {
+                display: block;
+                padding: 20px 0;
+            }
+
+            .menu li a {
+                display: block;
+
+            }
+
+            .hide-btn {
+                position: absolute;
+                right: 20px;
+                top: 10px;
+            }
+            .banner {
+            width: 100%;
+            margin-top: 10px;
+            height: 680px;
+            margin-bottom: 15px;
+            display: flex;
+            font-size: 40px;
+            color: white;
+        }
+
+        .banner {
+            background-image: url(../Image/banner.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .banner h2 {
+            margin: 20px 20px;
+            color: #fff;
+        }
+
+
+
+        .team {
+            margin-top: 120px;
+            margin-left: 80px;
+        }
+
+        .team h1 {
+            text-align: center;
+            
+            margin-bottom:24px;
+
+        }
+
+        .team img {
+            height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        background-color: goldenrod;
+        float: left;
+        margin-left: 15%;
+        margin-bottom: 20px;
+
+        }
+
+        .aboutus {
+            /* border: red 4px solid; */
+            margin-top: 30px;
+            
+            width: 100%;
+
+        }
+
+        .aboutus h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .project-1 {
+            display: block;
+            border: rgb(107, 104, 104) 4px solid;
+            height: 590px;
+            margin-left: 8px;
+            width: 740px;
+            /* float: left; */
+            background-color: rgb(107, 104, 104);
+
+        }
+
+        .project-1 h2 {
+            margin: 4px 4px 4px 2px;
+            color: white;
+
+        }
+
+        .project-1 p {
+            font-size: 20px;
+        }
+
+        .project-2 {
+            /* border: chartreuse 4px solid; */
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            margin-left: 10px;
+
+
+
+        }
+
+        .p1 img {
+            width: 720px;
+            height: 180px;
+
+        }
+
+        .p1 h3 {
+            position: absolute;
+            margin-top: 4px;
+            color: black;
+            margin-left: 230px;
+            font-size: 25px;
+        }
+
+        .div {
+            /* float: left; */
+            margin: 20px 15px;
+
+        }
+
+        #div1 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            padding: 10px 10px;
+            border-radius: 9px;
+            background-color: rgb(216, 151, 151);
+
+
+        }
+
+        #div2 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            padding: 10px 10px;
+            border-radius: 9px;
+            background-color: rgb(216, 151, 151);
+
+
+
+        }
+
+        #div3 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            padding: 10px 10px;
+            border-radius: 9px;
+            background-color: rgb(216, 151, 151);
+
+
+        }
+
+        #div4 {
+             float: left; 
+            margin: 20px;
+            border: white solid 2px;
+            border-radius: 9px;
+            padding: 10px 10px;
+            background-color: rgb(216, 151, 151);
+
+        }
+
+        .tec p {
+
+            width: 240px;
+            padding-left: 15px;
+
+        }
+
+        .tec a {
+            display: block;
+            border: red solid 2px;
+            margin-left: 10px;
+            margin-left: 3px;
+            color: white;
+            margin-top: 8px;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: white;
+            font-size: 20px;
+            text-decoration: none;
+            background-color: red;
+            text-align: center;
+
+
+
+        }
+
+        .tec a:hover {
+            display: block;
+            border: blue solid 2px;
+            margin-left: 10px;
+            margin-left: 3px;
+            color: white;
+            margin-top: 8px;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: white;
+            font-size: 20px;
+            text-decoration: none;
+            background-color: blue;
+            text-align: center;
+
+
+
+        }
+
+        .tec img {
+            border-radius: 8px;
+
+        }
+
+        .contact {
+            border: chartreuse 2px solids;
+        }
+
+        .con1 {
+            border: chocolate 2px solid;
+            background-color: rgb(233, 86, 115);
+            height: 140px;
+        }
+
+        .con1 h3 {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .con1 a {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+
+
+
+        }
+        @media (max-width: 800px){
+            
+            .show-btn,
+            .hide-btn {
+                display: block;
+            }
+
+            .menu {
+                position: fixed;
+                top: 0px;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: #333;
+                text-align: center;
+                padding: 80px 0;
+                transition: .7s;
+                line-height: normal;
+            }
+
+            #chk:checked~.menu {
+                right: 0;
+            }
+
+            .menu li {
+                display: block;
+                padding: 20px 0;
+            }
+
+            .menu li a {
+                display: block;
+
+            }
+
+            .hide-btn {
+                position: absolute;
+                right: 20px;
+                top: 10px;
+            }
+            .banner {
+            width: 100%;
+            margin-top: 10px;
+            height: 680px;
+            margin-bottom: 15px;
+            display: flex;
+            font-size: 40px;
+            color: white;
+        }
+
+        .banner {
+            background-image: url(../Image/banner.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .banner h2 {
+            margin: 20px 20px;
+            color: #fff;
+        }
+
+
+
+        .team {
+            margin-top: 120px;
+            margin-left: 80px;
+        }
+
+        .team h1 {
+            text-align: center;
+            
+            margin-bottom:24px;
+
+        }
+
+        .team img {
+            height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        background-color: goldenrod;
+        float: left;
+        margin-left: 15%;
+        margin-bottom: 20px;
+
+        }
+
+        .aboutus {
+            /* border: red 4px solid; */
+            margin-top: 30px;
+            
+            width: 100%;
+
+        }
+
+        .aboutus h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .project-1 {
+            display: block;
+            border: rgb(107, 104, 104) 4px solid;
+            height: 590px;
+            margin-left: 8px;
+            width: 740px;
+            /* float: left; */
+            background-color: rgb(107, 104, 104);
+
+        }
+
+        .project-1 h2 {
+            margin: 4px 4px 4px 2px;
+            color: white;
+
+        }
+
+        .project-1 p {
+            font-size: 20px;
+        }
+
+        .project-2 {
+            /* border: chartreuse 4px solid; */
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            margin-left: 10px;
+
+
+
+        }
+
+        .p1 img {
+            width: 720px;
+            height: 180px;
+
+        }
+
+        .p1 h3 {
+            position: absolute;
+            margin-top: 4px;
+            color: black;
+            margin-left: 230px;
+            font-size: 25px;
+        }
+
+        .div {
+            /* float: left; */
+            margin: 20px 15px;
+
+        }
+
+        #div1 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            padding: 10px 10px;
+            border-radius: 9px;
+            background-color: rgb(216, 151, 151);
+
+
+        }
+
+        #div2 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            padding: 10px 10px;
+            border-radius: 9px;
+            background-color: rgb(216, 151, 151);
+
+
+
+        }
+
+        #div3 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            padding: 10px 10px;
+            border-radius: 9px;
+            background-color: rgb(216, 151, 151);
+
+
+        }
+
+        #div4 {
+             float: left; 
+            margin: 20px;
+            border: white solid 2px;
+            border-radius: 9px;
+            padding: 10px 10px;
+            background-color: rgb(216, 151, 151);
+
+        }
+
+        .tec p {
+
+            width: 240px;
+            padding-left: 15px;
+
+        }
+
+        .tec a {
+            display: block;
+            border: red solid 2px;
+            margin-left: 10px;
+            margin-left: 3px;
+            color: white;
+            margin-top: 8px;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: white;
+            font-size: 20px;
+            text-decoration: none;
+            background-color: red;
+            text-align: center;
+
+
+
+        }
+
+        .tec a:hover {
+            display: block;
+            border: blue solid 2px;
+            margin-left: 10px;
+            margin-left: 3px;
+            color: white;
+            margin-top: 8px;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: white;
+            font-size: 20px;
+            text-decoration: none;
+            background-color: blue;
+            text-align: center;
+
+
+
+        }
+
+        .tec img {
+            border-radius: 8px;
+
+        }
+
+        .contact {
+            border: chartreuse 2px solids;
+        }
+
+        .con1 {
+            border: chocolate 2px solid;
+            background-color: rgb(233, 86, 115);
+            height: 140px;
+        }
+
+        .con1 h3 {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .con1 a {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+
+
+
+        }
+
+        @media (max-width: 625px){
+            .show-btn,
+            .hide-btn {
+                display: block;
+            }
+
+            .menu {
+                position: fixed;
+                top: 0px;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: #333;
+                text-align: center;
+                padding: 80px 0;
+                transition: .7s;
+                line-height: normal;
+            }
+
+            #chk:checked~.menu {
+                right: 0;
+            }
+
+            .menu li {
+                display: block;
+                padding: 20px 0;
+            }
+
+            .menu li a {
+                display: block;
+
+            }
+
+            .hide-btn {
+                position: absolute;
+                right: 20px;
+                top: 10px;
+            }
+            div {
+            min-width: 320px;;
+        }
+            .banner {
+            width: 100%;
+            margin-top: 10px;
+            height: 680px;
+            margin-bottom: 15px;
+            display: flex;
+            font-size: 40px;
+            color: white;
+        }
+
+        .banner {
+            background-image: url(../Image/banner.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .banner h2 {
+            margin: 20px 20px;
+            color: #fff;
+        }
+
+
+
+        .team {
+            margin-top: 120px;
+            margin-left: 80px;
+        }
+
+        .team h1 {
+            text-align: center;
+            
+            margin-bottom:24px;
+
+        }
+
+        .team img {
+            height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        background-color: goldenrod;
+        float: left;
+        margin-left: 15%;
+        margin-bottom: 20px;
+
+        }
+
+        .aboutus {
+            /* border: red 4px solid; */
+            margin-top: 30px;
+            
+            width: 100%;
+
+        }
+
+        .aboutus h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .project-1 {
+            display: block;
+            border: rgb(107, 104, 104) 4px solid;
+            height: 590px;
+            margin-left: 8px;
+            width: 740px;
+            /* float: left; */
+            background-color: rgb(107, 104, 104);
+
+        }
+
+        .project-1 h2 {
+            margin: 4px 4px 4px 2px;
+            color: white;
+
+        }
+
+        .project-1 p {
+            font-size: 20px;
+        }
+
+        .project-2 {
+            /* border: chartreuse 4px solid; */
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            margin-left: 10px;
+
+
+
+        }
+
+        .p1 img {
+            width: 720px;
+            height: 180px;
+
+        }
+
+        .p1 h3 {
+            position: absolute;
+            margin-top: 4px;
+            color: black;
+            margin-left: 230px;
+            font-size: 25px;
+        }
+
+        .div {
+            /* float: left; */
+            margin: 20px 15px;
+
+        }
+
+        #div1 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            padding: 10px 10px;
+            border-radius: 9px;
+            background-color: rgb(216, 151, 151);
+
+
+        }
+
+        #div2 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            padding: 10px 10px;
+            border-radius: 9px;
+            background-color: rgb(216, 151, 151);
+
+
+
+        }
+
+        #div3 {
+            float: left;
+            margin: 20px;
+            border: white solid 2px;
+            padding: 10px 10px;
+            border-radius: 9px;
+            background-color: rgb(216, 151, 151);
+
+
+        }
+
+        #div4 {
+             float: left; 
+            margin: 20px;
+            border: white solid 2px;
+            border-radius: 9px;
+            padding: 10px 10px;
+            background-color: rgb(216, 151, 151);
+
+        }
+
+        .tec p {
+
+            width: 240px;
+            padding-left: 15px;
+
+        }
+
+        .tec a {
+            display: block;
+            border: red solid 2px;
+            margin-left: 10px;
+            margin-left: 3px;
+            color: white;
+            margin-top: 8px;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: white;
+            font-size: 20px;
+            text-decoration: none;
+            background-color: red;
+            text-align: center;
+
+
+
+        }
+
+        .tec a:hover {
+            display: block;
+            border: blue solid 2px;
+            margin-left: 10px;
+            margin-left: 3px;
+            color: white;
+            margin-top: 8px;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: white;
+            font-size: 20px;
+            text-decoration: none;
+            background-color: blue;
+            text-align: center;
+
+
+
+        }
+
+        .tec img {
+            border-radius: 8px;
+
+        }
+
+        .contact {
+            border: chartreuse 2px solids;
+        }
+
+        .con1 {
+            border: chocolate 2px solid;
+            background-color: rgb(233, 86, 115);
+            height: 140px;
+        }
+
+        .con1 h3 {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .con1 a {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a name="home"></a>
+        <div class="header">
+            <h2>Beta-Labs</h2>
+            <input type="checkbox" id="chk">
+            <label for="chk" class="show-btn">
+                <i class="fa fa-bars"></i>
+
+            </label>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#aboutus">About</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#tech">Technology</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <label for="chk" class="hide-btn">
+                    <i class="fa fa-times"></i>
+
+                </label>
+            </ul>
+        </div>
+        <div class="banner">
+            <h2>PRACTICAL-9</h2>
+
+        </div>
+        <a name="team"></a>
+        <div class="team">
+            <h1>Team Members</h1>
+            <img src="../Image/team1.png" alt="">
+            <img src="../Image/team2.png" alt="">
+            <img src="../Image/team3.png" alt="">
+            <img src="../Image/team4.png" alt="">
+
+        </div>
+
+
+
+        <div class="aboutus">
+            <a name="aboutus"></a>
+
+            <h1>About Us</h1>
+            <div class="project-1">
+                <h2>About Project</h2>
+
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur molestias enim maxime aperiam
+                    et dicta dolore. Dicta ea suscipit recusandae laborum aut eveniet quam magni, voluptatibus
+                    reprehenderit deleniti facere, dignissimos nulla numquam, esse error. Quidem maxime voluptas ipsum
+                    accusantium nostrum facilis deleniti, eligendi culpa iusto non laborum ducimus aliquam
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit optio deleniti dolor facilis
+                    voluptatibus quos harum, voluptate explicabo sequi rem. Mollitia voluptas eius beatae error libero
+                    quos
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam inventore commodi at pariatur eius
+                    quae
+                    beatae quos blanditiis. Iure hic voluptatem aliquid error quasi voluptatibus.
+                    pariatur ea accusantium culpa repellendus? Nobis adipisci ullam ipsum
+                    voluptates atque illo! Tenetur quisquam eius qui maxime harum fuga sed quia, laudantium corporis et
+                    aliquid repellat quis nihil laborum similique error cumque consequatur cupiditate voluptatum vero
+                    repellendus. Magnam, sint, laudantium quis quia animi libero facere nobis consequuntur, voluptatem
+                    necessitatibus dignissimos nam adipisci vitae aut dolores minus ea dolorem quod. Perferendis
+                    adipisci
+                    sint quod suscipit reprehenderit nesciunt ipsa excepturi delectus quisquam, sunt natus architecto,
+                    consequuntur id eos modi quos dolor, magnam consequatur est facilis dignissimos ex deleniti.
+                    Voluptas et
+                    sunt eum porro amet ipsa magni, placeat quibusdam ullam, quam molestias officiis repellat fugiat
+                    repudiandae? Iusto exercitationem et quae, eaque animi, repellat incidunt voluptatibus tempora culpa
+                    reiciendis officiis pariatur. Perferendis illum excepturi maxime, magnam praesentium odio obcaecati
+                    molestiae debitis sit dolorem in quod vitae assumenda necessitatibus error pariatur nisi cupiditate
+                    incidunt. Id sed esse aliquam officiis voluptates maxime modi!
+                    architecto deleniti odit consequatur voluptatibus magni reprehenderit totam distinctio quia.
+                    corporis.
+                </p>
+
+            </div>
+            <div class="project-2">
+                <div class="p1">
+                    <h3>Project-1</h3>
+                    <img src="../Image/p1.png" alt="">
+
+                </div>
+                <div class="p1">
+                    <h3>Project-2</h3>
+
+                    <img src="../Image/p2.jpg" alt="">
+
+                </div>
+                <div class="p1">
+                    <h3>Project-3</h3>
+                    <img src="../Image/p3.jpg" alt="">
+                </div>
+
+            </div>
+            <a name="tech"></a>
+            <div class="tec">
+
+                <div class="div">
+
+                    <h1>Technologies Used</h1>
+                    <div id="div1">
+                        <img src="../Image/HTML.png" width="285px" height="190px">
+                        <h3>Introduction To HTML</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas magnam vero aliquid odio
+                            ducimus
+                            tempora voluptate mollitia sed inventore ab.
+
+                            <a href="./Practical_5_html.html">Read More</a>
+                        </p>
+                    </div>
+                    <div id="div2">
+                        <img src="../Image/css.png" width="285px" height="190px">
+                        <h3>Introduction To CSS</h3>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae est labore inventore
+                            fuga sunt
+                            perferendis vel tempora neque voluptates cupiditate?
+                            <a href="./Practical_5_css.html">Read More</a>
+                        </p>
+                    </div>
+                    <div id="div3">
+
+                        <img src="../Image/jquery.png" width="285px" height="190px">
+                        <h3>Introduction To Jquery</h3>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo fugiat eaque laboriosam quidem
+                            omnis nihil
+                            possimus iusto ratione ea eius.
+                            <a href="./Practical_5_js.html"> Read More</a>
+                        </p>
+
+                    </div>
+                    <div id="div4">
+
+                        <img src="../Image/bootstrap.jpg" width="285px" height="190px">
+                        <h3>Introduction To Bootstrap</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa obcaecati neque facilis,
+                            deleniti dolores
+                            at cupiditate eius nulla ut ducimus?
+                            <a href="./Practical_5_boot.html">Read More</a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+
+        <a name="contact"></a>
+        <div class="contact">
+            <h1 style="text-align: center ; margin: 0px 0px 8px 0px;">Contact</h1>
+            <div class="con1">
+                <h3> Website Template for Practical-8 &copy Vivek_Singh</h3>
+                <a href="#home">Back to Top </a>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
