@@ -13,6 +13,8 @@
     align-items: center;
     font-size: 40px;
     color: grey;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 footer{
     width: 100%;
