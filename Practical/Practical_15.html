@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href='../CSS/practical_15.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="main">
+
+        <h3>COUNTER</h3>
+        <button id="btn1">-</button>
+        <button id="clickme"></button>
+        <button id="btn2">+</button>
+
+        <script>
+            var button1 = document.getElementById("btn1");
+
+            var button = document.getElementById("clickme");
+            var button2 = document.getElementById("btn2");
+            count = 0;
+            button1.onclick = function () {
+                count = count - 1;
+
+                button.innerHTML = count;
+
+                if (count == 0) {
+                    button1.disabled = true;
+                }
+            };
+            button2.onclick = function () {
+                count += 1;
+                button.innerHTML = count;
+
+            };
+
+        </script>
+
+    </div>
+</body>
+
+</html>
