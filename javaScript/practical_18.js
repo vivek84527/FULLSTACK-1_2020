@@ -1,67 +1,96 @@
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const password1 = document.getElementById('password1');
-const password2 = document.getElementById('password2');
-small = document.querySelector(small);
+var form =  document.getElementById("form");
+var username = document.getElementById("username");
+var email = document.getElementById("email");
+var password1 =  document.getElementById("password1");
+var password2 =  document.getElementById("password2");
+var namesmall =  document.getElementById("name-small");
+var emailsmall =  document.getElementById("email-small");
+var password1small =  document.getElementById("password1-small");
+var password2small =  document.getElementById("password2-small");
+var namewrong = document.getElementById("name-wrong");
+var emailwrong = document.getElementById("email-wrong");
+var pass1wrong = document.getElementById("password1-wrong");
+var pass2wrong = document.getElementById("password2-wrong");
+var nameright = document.getElementById("name-right");
+var emailright = document.getElementById("email-right");
+var pass1right = document.getElementById("password1-right");
+var pass2right = document.getElementById("password2-right");
 
-form.addEventListener('submit', function (e) {
+
+form.addEventListener('submit',(e)=>{
     e.preventDefault();
+
     checkInput();
 });
 
-function checkInput() {
-    const usernameValue = username.value.trim();
-    const emailValue = email.value.trim();
-    const password1Value = password1.value.trim();
-    const password2Value = password2.value.trim();
-    if (usernameValue === '') {
-        showError(username, "Username can not be blank");
+function checkInput(){
+    if (username.value ===''){
+        username.style.borderBottomColor = "red";
+        namesmall.innerHTML = "username can't be blank";
+        namesmall.style.visibility = 'visible';
+        namewrong.style.visibility = "visible";
     }
-    else {
-        showSuccess(username);
+    else if(username.value.match(/^[a-z0-9A-Z]+$/g)){
+        username.style.borderBottomColor =  'green';
+        nameright.style.visibility  = 'visible';
+        namewrong.style.visibility = 'hidden';
+        namesmall.style.visibility = 'hidden';
     }
-
-    if (emailValue === '') {
-        showError(email, "Email can not be blank");
+    else{
+        username.style.borderBottomColor = "red";
+        namesmall.innerHTML = "Username must contain small letters and no special symbols!";
+        namesmall.style.visibility = 'visible';
+        namewrong.style.visibility = "visible";
     }
-    else if (!isEmailValid(emailValue)) {
-        showError(email, "Email ID is not valid");
+    if(email.value ===''){
+        email.style.borderBottomColor = "red";
+        emailsmall.innerHTML = "email-id can't be blank";
+        emailsmall.style.visibility = 'visible';
+        emailwrong.style.visibility = "visible";
     }
-    else {
-        showSuccess(email);
+    else if((email.value).match(/@gmail.com$/gim)){
+        email.style.borderBottomColor =  'green';
+        emailright.style.visibility  = 'visible';
+        // emailright.style.top = '128px';
+        emailwrong.style.visibility = 'hidden';
+        emailsmall.style.visibility = 'hidden';
     }
-
-    if (password1Value === '') {
-        showError(password1, "Password can not be blank");
+    else{
+        email.style.borderBottomColor = "red";
+        emailsmall.innerHTML = "enter a valid email id";
+        emailsmall.style.visibility = 'visible';
+        emailwrong.style.visibility = "visible";
     }
-    else {
-        showSuccess(password1);
+    if(password1.value ===''){
+        password1.style.borderBottomColor = "red";
+        password1small.innerHTML = "Field can't be blank";
+        password1small.style.visibility = 'visible';
+        pass1wrong.style.visibility = "visible";
     }
-
-
-    if (password2Value === '') {
-        showError(password2, "Password can not be blank");
+    else{
+        password1.style.borderBottomColor = 'green';
+        pass1right.style.visibility='visible';
+        pass1wrong.style.visibility = 'hidden';
+        password1small.style.visibility = 'hidden';
     }
-    else if (password2Value !== password1Value) {
-        showError(password2, "Password not match");
+    if(password2.value ===''){
+        password2.style.borderBottomColor = "red";
+        password2small.innerHTML = "Field can't be blank";
+        password2small.style.visibility = 'visible';
+        pass2wrong.style.visibility = "visible";
+        pass2right.style.visibility = 'hidden';
     }
-    else {
-        showSuccess(password2);
+    else if((password2.value)===(password1.value)){
+        password2.style.borderBottomColor = 'green';
+        pass2right.style.visibility = 'visible';
+        pass2wrong.style.visibility = 'hidden';
+        password2small.style.visibility = 'hidden';
     }
-}
-function showError(input, msg) {
-    const formControl = input.parentNode;
-    formControl.className = 'form-control error';
-    const small = formControl.querySelector('small');
-    small.innerHTML = msg;
-}
-function showSuccess(input) {
-    const formControl = input.parentNode;
-    formControl.className = 'form-control success';
-
-
-}
-function isEmailValid(email) {
-    return /^([a-zA-Z0-9_\.\-\+]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,3})$/.test(email);
+    else{
+        password2.style.borderBottomColor = "red";
+        password2small.innerHTML = "password can't match!";
+        password2small.style.visibility = 'visible';
+        pass2wrong.style.visibility = "visible";
+        pass2right.style.visibility = 'hidden';
+    }
 }

@@ -1,93 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 body{
-    background-color: darkslateblue;
-    font-family: 'Open Sans', sans-serif;
-    height: 100vh;
+    font-family:sans-serif;
+    background-color: rgb(216, 190, 190);
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
+    min-height: 100vh;
 }
+
 .container{
-    background-color: #ffffff;
-    width: 400px;
-    border-radius: 5px;
+    background-color: rgb(236, 234, 234);
+    /* padding: 20px 30px; */
+    width: 500px;
+    border-radius: 7px;
     overflow: hidden;
 }
-.header{
-    background-color: #f7f7f7;
+
+.form{
+    padding: 20px 30px;
 }
+
+.header{
+    background-color: whitesmoke
+}
+
 .header h2{
     padding: 20px;
     text-align: center;
 }
 .form{
-    padding: 20px 30px;
+    background: transparent;
 }
-.form-control{
-  margin-bottom: 10px;
+.form-container{
+    margin-bottom: 10px;
     padding-bottom: 20px;
     position: relative;
 }
-.form-control label{
+
+.form-container label{
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
-.form-control input{
+.form-container input{
     display: block;
     width: 100%;
     padding: 10px;
     border-radius: 5px;
     outline: none;
-    border: 2px solid #f0f0f0;
+    border: none;
+    /* background-color:transparent; */
+    border-bottom-style: groove;
 }
-.form-control i{
+
+.form-container i{
     position: absolute;
     right: 10px;
-    bottom: 40px;
+    top: 38px;
     visibility: hidden;
 }
-.form-control small{
+
+.form-container small{
     position: absolute;
-    left: 0;
+    left: 0px;
     visibility: hidden;
-    margin-top: 5px;
 }
+
 .form button{
     display: block;
     width: 100%;
-    background-color: darkslateblue;
+    background-color: rgb(119, 107, 107);
     color: white;
     padding: 10px;
-    outline: none;
     border: none;
-    border-radius: 5px;
-    text-align: center;
+    outline: none;
+    border-radius: 30px;
+    
 }
-.form-control .success input{
-    border-color: forestgreen;
+#right{
+    color: green;
+    z-index:2;
 }
-.form-control .success .fa-check-circle {
-    visibility: visible;
-    color: forestgreen;
-
-}
-.form-control .error input{
-    border-color: red;
-
-}
-.form-control .error .fa-exclamation-circle{
-    visibility: visible;
-     color: red;
-
-}
-.form-control .error small{
-    visibility: visible;
+#wrong{
     color: red;
 }
